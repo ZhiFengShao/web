@@ -1,0 +1,106 @@
+html,body{
+    width: 100%;
+    height: 100%;
+}
+
+.header_topbar form{
+    width: 100%;
+    height: 44px;
+    /*background: red;*/
+    padding: 0 40px;
+}
+
+.header_topbar form input{
+    width: 100%;
+    height: 34px;
+    margin-top: 5px;
+    border: 1px solid #e0e0e0;
+}
+
+/*分类主要内容*/
+.jd_c_main{
+    width: 100%;
+    height: 100%;
+    /*background: #000;*/
+    /* 若header的position属性为fixed,就需要设置padding-top */
+    /*padding-top: 45px;*/
+    /*padding-bottom: 45px;*/
+}
+
+/*左边*/
+.jd_c_main .main_left_table{
+    float: left;
+    width: 76px;
+    height: 100%;
+    /*background: red;*/
+    overflow: hidden;
+
+}
+.main_left_table ul li{
+    width: 76px;
+    height: 50px;
+    line-height: 50px;
+    border-bottom: 1px solid #e0e0e0;
+    /*border-right: 1px solid #e0e0e0;*/
+    text-align: center;
+}
+.main_left_table ul li a{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.main_left_table ul li.current a{
+    color: #f23030;
+}
+
+/*右边*/
+.jd_c_main .main_right_content{
+    /*高度设置最小高度*/
+    height: 100%;
+    /*min-height: 100%;*/
+    background: #f3f5f7;
+    /*一旦设置当前的标签为overflow: hidden; 当前标签就会被当做一个绝缘体,占满剩余部分*/
+    overflow: hidden;
+}
+/*右边广告*/
+.main_right_content .right_con_promotion{
+    margin: 7px 7px 0 7px;
+}
+
+.main_right_content .right_con_promotion img{
+    display: block;
+    width: 100%;
+}
+/*右边组*/
+.main_right_content .right_con_section{
+    display: block;
+    margin: 19px 7px 0 7px;
+}
+.main_right_content .right_con_section h4{
+    /*em是字体的默认高 1em=16px*/
+    line-height: 1em;
+    font-size: 11px;
+    font-weight: normal;
+    color: #232326;
+}
+.main_right_content .right_con_section ul{
+    padding: 7px 10px 0px 10px;
+    margin-top: 9px;
+    background-color: #fff;
+}
+.main_right_content .right_con_section ul li{
+    float: left;
+    width: 32.8%;
+    text-align: center;
+}
+.main_right_content .right_con_section ul li a img{
+    width: 55px;
+    height: 55px;
+}
+
+.main_right_content .right_con_section ul li a p{
+    width: 100%;
+    height: 31px;
+    font-size: 10px;
+    color: #686868;
+}

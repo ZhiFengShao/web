@@ -1,0 +1,159 @@
+*,
+::before,
+::after{
+    padding: 0;
+    margin: 0;
+    /*盒子先确定最外面大小, -webkit chrome与safari,firfox:-moz,属性作用:设置边框和内边距后，不会改变元素原来的大小 */
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    /*清除iOS高亮状态*/
+    -webkit-tap-highlight-color: transparent;
+}
+
+body{
+    /*定义font-family时,最好在最后加一个sans-serif,这样如果所列出的字体都不能用，则默认的sans-serif字体能保证调用*/
+    font-family: "Microsoft YaHei", sans-serif;
+    font-size: 12px;
+    color: #000;
+}
+
+ul,ol{
+    list-style: none;
+}
+
+a{
+    /* 去除下划线 */
+    text-decoration: none;
+    color: #666;
+}
+
+textarea,input{
+    /*由于边框宽度1/2不定,所以我们去除掉自己统一设置*/
+    border: none;
+    outline: none;
+    /*去除iOS中的非扁平化效果*/
+    -webkit-appearance: none;
+}
+
+/*为了拿到某些浮动的ul,ol的准确高度,为了父容器能被浮动的子容器撑开,我们需要去浮动*/
+.clearfix::before,
+.clearfix::after{
+    content: ".";
+    display: block;
+    height: 0;
+    line-height: 0;
+    /*清除全部样式,主要用于清除多个浮动*/
+    clear: both;
+    /*将元素隐藏,但是在网页中该占的位置还是占着*/
+    visibility: hidden;
+}
+
+/*拿到所有前缀为'icon_'的类,此处是正则匹配的知识后面会讲*/
+[class ^= "icon_"]{
+    background: url("../images/sprites.png") no-repeat;
+    -webkit-background-size: 200px 200px;
+    background-size: 200px 200px;
+}
+
+/* 清除下边线 */
+.clearBorder_bottom{
+    border-bottom: none !important;
+}
+
+
+/* 常用头部 */
+/*头部*/
+.jd_c_header{
+    width: 100%;
+    /*高度可变,此处*/
+    /*height: 44px;*/
+    /* 背景图 2*88,也就行显示为 1px 44px 所以需要水平平铺 */
+    background: url("../images/header-bg.png") repeat-x;
+    -webkit-background-size: 1px 44px;
+    background-size: 1px 44px;
+
+    /* position默认就是static */
+    position: fixed;
+}
+
+.jd_c_header .header_topbar{
+    width: 100%;
+    height: 44px;
+    text-align: center;
+    position: relative;
+}
+
+.header_topbar .icon_back{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 40px;
+    height: 44px;
+    background-position: -20px 0;
+
+    /*剪切*/
+    padding: 12px 10px;
+    /*背景图像相对于内容框来定位。*/
+    background-origin: content-box;
+    /*背景被裁剪到内容框。*/
+    background-clip: content-box;
+}
+.header_topbar .icon_shortcut{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40px;
+    height: 44px;
+    background-position: -60px 0;
+
+    /*剪切*/
+    padding: 12px 10px;
+    /*背景图像相对于内容框来定位。*/
+    background-origin: content-box;
+    /*背景被裁剪到内容框。*/
+    background-clip: content-box;
+}
+
+/*弹出的快捷栏*/
+.jd_c_header .shortcut{
+    display: none;
+
+    width: 100%;
+    height: 57px;
+    background: #404042;
+}
+.shortcut li{
+    display: table-cell;
+    width: 25%;
+    text-align: center;
+}
+.shortcut li.current{
+    background: #2d2d2d;
+}
+
+.shortcut li a span{
+    display: block;
+    margin: 0 auto;
+
+    width: 30px;
+    height: 30px;
+    margin-top: 6px;
+}
+.shortcut li a p{
+    display: block;
+    color: #ffffff;
+    font-size: 12px;
+}
+
+.shortcut li a span.icon_home{
+    background-position: -30px -27px;
+}
+.shortcut li a span.icon_category{
+    background-position: -60px -27px;
+}
+.shortcut li a span.icon_cart{
+    background-position: -90px -27px;
+}
+.shortcut li a span.icon_me{
+    background-position: -120px -27px;
+}

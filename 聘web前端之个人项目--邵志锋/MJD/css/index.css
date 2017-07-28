@@ -1,0 +1,458 @@
+body{
+    background-color: #f5f5f5;
+}
+.jd_layout{
+    max-width:640px;
+    min-width: 300px;
+    /*height: 2000px;*/
+    margin: 0 auto;
+    /*background-color: red;*/
+    position: relative;
+}
+
+/*=============================*/
+/*头部*/
+.jd_header{
+    /*相对于浏览器位置*/
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    /*移动端常用高度*/
+    height: 44px;
+    /*background-color: #000;*/
+    /*调整屏幕显示优先级为最高,防止被banner遮盖*/
+    z-index: 999;
+}
+.jd_header .jd_header_box{
+    max-width:640px;
+    min-width: 300px;
+    height: 100%;
+    margin: 0 auto;
+    background: transparent;
+    position: relative;
+}
+
+.jd_header_box .icon_logo{
+
+    background-position: 0 -103px;
+
+    position: absolute;
+    left: 7px;
+    top: 7px;
+    width: 60px;
+    height: 30px;
+}
+
+.jd_header_box .jd_login{
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    line-height: 40px;
+    width: 40px;
+    height: 40px;
+    font-size: 15px;
+    color: #f5f5f5;
+    text-align: center;
+}
+.jd_header_box form{
+    width: 100%;
+    height: 100%;
+    /*设置内边距,在box大小不变的情况下,form会向内展示,pl= 60+10, pr = 42+8*/
+    padding-right: 50px;
+    padding-left: 70px;
+
+}
+
+.jd_header_box form span{
+    background-position: -60px -109px;
+    width: 20px;
+    height: 20px;
+    /*left= form的pl+7,top=(44-20)/2 = 11*/
+    position: absolute;
+    left: 77px;
+    top: 11px;
+}
+.jd_header_box form input{
+    width: 100%;
+    height: 34px;
+    /*在CSS中margin是指从自身边框到另一个容器边框之间的距离，就是容器外距离。
+    在CSS中padding是指自身边框到自身内部另一个容器边框之间的距离，就是容器内距离。*/
+    margin-top: 5px;
+    padding-left: 30px;
+    border-radius: 17px;
+}
+
+/*========尾部==========*/
+.jd_footer{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+
+    background: #fff;
+    
+    width: 100%;
+    /*高度iOS系统的手机中的tabBar控件高度为49,但是m.jd内高度设置的是54*/
+    height: 54px;
+
+    /*阴影设置 水平方向0 竖直方向向上:-2px 阴影范围2px 颜色#ccc*/
+    box-shadow: 0 -2px 2px #CCC;
+}
+
+.jd_footer ul li{
+    width: 20%;
+    float: left;
+    text-align: center;
+}
+
+.jd_footer ul li a{
+    width: 100%;
+    /*行内元素a->块级元素*/
+    display: block;
+}
+
+.jd_footer ul li a img{
+    width: 70px;
+}
+
+/*轮播图*/
+.jd_banner{
+    width: 100%;
+    /*隐藏1000%的ul的超出部分*/
+    overflow: hidden;
+    /*pages相对banner定位*/
+    position: relative;
+}
+.jd_banner ul{
+    /*10张li都是屏幕宽度*/
+    width: 1000%;
+    /*当前显示第一页,注意移动值是向左移动,所以是负数*/
+    -webkit-transform: translateX(-10%);
+    transform: translateX(-10%);
+}
+.jd_banner ul li{
+    /*相对于ul的宽度*/
+    width: 10%;
+    float: left;
+}
+.jd_banner ul li a{
+    width: 100%;
+    display: block;
+}
+.jd_banner ul li a img{
+    width: 100%;
+}
+
+.jd_banner ol{
+    position: absolute;
+    left: 50%;
+    bottom: 10px;
+
+    width: 144px;
+    height: 6px;
+    margin-left: -74px;
+
+    /*background: black;*/
+}
+.jd_banner ol li{
+    width: 6px;
+    height: 6px;
+    border: 1px solid #fff;
+    border-radius: 3px;
+    float: left;
+    /* 几何展示 (144 - 8*6)/(2+7*2) = 6 */
+    margin: 0 6px;
+}
+
+.jd_banner ol li.current{
+    background: #fff;
+}
+
+/*nav导航*/
+.jd_nav{
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    padding: 20px 0 10px 0;
+}
+.jd_nav ul li{
+    float: left;
+    width: 20%;
+    height: 70px;
+    margin-bottom: 10px;
+}
+
+.jd_nav ul li a{
+    display: block;
+    width: 100%;
+    text-align: center;
+    /*text-decoration: none;*/
+}
+.jd_nav ul li a img{
+    width: 40px;
+    height: 40px;
+}
+.jd_nav ul li a p{
+    color: #666666;
+    font-size: 13px;
+    /*outline-style: none;*/
+}
+
+/*产品中心*/
+.jd_product{
+    margin: 15px 6px;
+}
+
+.jd_product section{
+    width: 100%;
+    /*height: 130px;*/
+    background-color: #ffffff;
+
+    border: 1px solid #e0e0e0;
+    margin-bottom: 10px;
+}
+
+.jd_product section .jd_product_section_title{
+    width: 100%;
+    height: 36px;
+    border-bottom: 1px solid #e0e0e0;
+    line-height: 36px;
+}
+
+.jd_product section .jd_product_section_title h3{
+    font-size: 15px;
+    font-weight: normal;
+    color: #666666;
+    padding-left: 18px;
+
+    position: relative;
+}
+
+.jd_product section .jd_product_section_title h3::before{
+    content: "";
+    width: 4px;
+    height: 26px;
+    background: #f23030;
+    
+    position: absolute;
+    top: 5px;
+    left: 8px;
+}
+
+/*秒杀头部*/
+.jd_product section .jd_product_section_title .seckill-left-link{
+    float: left;
+    display: inline-block;
+    width: 82%;
+}
+.seckill-left-link .seckill-tit-img{
+    float: left;
+    display: inline-block;
+    width: 69px;
+    height: 27px;
+    margin-top: 6px;
+    margin-right: 6px;
+
+}
+.seckill-left-link .seckill-nth{
+    font-size: 12px;
+    font-weight: bold;
+    display: inline-block;
+    color: #181818;
+    vertical-align: middle;
+}
+.seckill-left-link .seckill-timer{
+    display: inline-block;
+    margin-left: 6px;
+    vertical-align: middle;
+}
+
+.seckill-left-link .seckill-timer span{
+    background: #000000;
+    padding: 0 3px;
+    margin: 0;
+    color: #ffffff;
+    font-size: 12px;
+}
+.seckill-left-link .seckill-timer span:nth-child(3n){
+    background: transparent;
+    color: #000;
+    padding: 0;
+}
+
+.jd_product section .jd_product_section_title .seckill-more-link{
+    float: right;
+    display: inline-block;
+    width: 18%;
+
+    text-align: right;
+    padding-right: 22px;
+    color: #f23030;
+    font-size: 10px;
+    position: relative;
+}
+
+.seckill-more-link::after{
+    content: "";
+    background: url("../images/arrow_rt.png") no-repeat;
+    -webkit-background-size:12px 12px;
+    background-size:12px 12px;
+
+    width: 12px;
+    height: 12px;
+    position: absolute;
+    top: 12px;
+    right:8px;
+}
+
+/*秒杀内容*/
+.jd_product_section_con .seckill-container{
+    width: 100%;
+    padding: 10px;
+}
+.seckill-container li{
+    width: 33.33%;
+    float: left;
+
+    text-align: center;
+}
+
+.seckill-container li a{
+    display: block;
+    width: 100%;
+    border-right: 1px solid #e0e0e0;
+}
+.seckill-container li:last-child a{
+    border-right: none;
+}
+
+.seckill-container li a img{
+    width: 80%;
+    /*min-height: 60px;*/
+}
+.seckill-container li p:nth-of-type(1){
+    color: #f23030;
+    font-size: 16px;
+    font-weight: bold;
+}
+.seckill-container li p:nth-of-type(2){
+    color: #666666;
+    font-size: 12px;
+    text-decoration: line-through;
+}
+
+/*产品样式信息*/
+
+/* li的布局 */
+.pull_left{
+    float: left;
+}
+.pull_right{
+    float: right;
+}
+.w_half{
+    width: 50%;
+}
+
+.w_half img{
+    display: block;
+    width: 100%;
+}
+
+.b_r{
+    border-right: 1px solid #e0e0e0;
+}
+.b_l{
+    border-left: 1px solid #e0e0e0;
+}
+.b_b{
+    border-bottom: 1px solid #e0e0e0;
+}
+
+/*为您推荐*/
+.jd_recommend{
+
+    margin-bottom: 64px;
+}
+
+/*推荐标题*/
+.jd_recommend .jd_recommend_title{
+    width: 100%;
+    text-align: center;
+    position: relative;
+
+    margin-bottom: 10px;
+}
+.jd_recommend .jd_recommend_title span{
+    font-size: 15px;
+    color: #666666;
+    padding: 3px 20px;
+    background: #f5f5f5;
+}
+.jd_recommend .jd_recommend_title::before{
+    content: "";
+    width: 100%;
+    height: 1px;
+    background: #e0e0e0;
+
+    position: absolute;
+    left: 0;
+    top: 50%;
+    z-index: -1;
+}
+/*推荐内容*/
+.jd_recommend .jd_recommend_con{
+    width: 100%;
+}
+.jd_recommend_con ul li{
+    float: left;
+    width: 49%;
+    background: #fff;
+    margin-bottom: 10px;
+}
+.jd_recommend_con ul li:nth-child(2n){
+    float: right;
+}
+.jd_recommend_con ul li>a{
+    display: block;
+    width: 100%;
+}
+.jd_recommend_con ul li>a .similar-product img{
+    width: 100%;
+}
+.similar-product .similar-product-desc{
+    font-size: 13px;
+    color: #232326;
+
+    /*height: 33px;*/
+    /*line-height: 17px;*/
+    /*overflow: hidden;*/
+
+    /*display: -webkit-box;*/
+    /*-webkit-line-clam: 2;*/
+    /*-webkit-box-orient: vertical;*/
+    /*text-overflow: ellipsis;*/
+    /*word-break: break-all;*/
+
+    margin-top: 5px;
+    margin-bottom: 3px;
+    padding: 0 4px;
+}
+
+
+
+.jd_recommend_con ul li .similar-product-bottom .similar-product-price{
+    float: left;
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: #f23030;
+}
+.jd_recommend_con ul li .similar-product-bottom .guess-btn{
+    float: right;
+    border: 1px solid #e0e0e0;
+    padding: 3px 5px;
+    color: #666666;
+    margin-right: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
